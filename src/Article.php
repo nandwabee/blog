@@ -7,7 +7,7 @@ class Article{
     $this->repo = new ArticleRepository;
   }
   /**
-   * Store a new blog. At this moment this is tightly coupled to Laravel. 
+   * Store a new article. At this moment this is tightly coupled to Laravel. 
    */
   public function store($payload){
     return $this->repo->create($payload);
