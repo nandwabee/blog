@@ -39,7 +39,7 @@ class ArticleServiceProvider extends ServiceProvider{
      * Merge config with what the user has provided.
      */
     $this->mergeConfigFrom(
-        __DIR__.'/Config/courier.php', 'investigatively'
+        __DIR__.'/Config/investigatively.php', 'investigatively'
     );
   }
 }
