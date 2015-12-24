@@ -1,0 +1,24 @@
+{
+    "name": "nandwabee/blog",
+    "description": "A simple blogging utility for laravel 5",
+    "type": "Utility",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nandwabee\\Blog\\": "src/",
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Bernard Nandwa",
+            "email": "nandwabee@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
