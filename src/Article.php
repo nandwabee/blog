@@ -1,8 +1,10 @@
-<?php namespace Nandwabee;
+<?php 
 
-class Blog{
+namespace Investigatively\Article;
+
+class Article{
   function __construct(){
-    $this->repo = new BlogRepository;
+    $this->repo = new ArticleRepository;
   }
   /**
    * Store a new blog. At this moment this is tightly coupled to Laravel. 
