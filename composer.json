@@ -1,11 +1,11 @@
 {
     "name": "investigatively/article",
     "description": "A publishing utility for laravel 5",
-    "type": "Utility",
+    "type": "utility",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Investigatively\\Article\\": "src/",
+            "Investigatively\\Article\\": "src/"
         }
     },
     "autoload-dev": {
