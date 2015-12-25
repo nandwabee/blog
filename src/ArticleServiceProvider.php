@@ -15,7 +15,7 @@ class ArticleServiceProvider extends ServiceProvider{
     $this->loadViewsFrom(__DIR__.'/Views', 'investigatively');
 
     /**
-     * Publish the package assets
+     * Publish the package assets.
      */
     $this->publishes([
         __DIR__.'/Views' => base_path('resources/views/vendor/investigatively'),
@@ -23,6 +23,9 @@ class ArticleServiceProvider extends ServiceProvider{
         __DIR__.'/Config/investigatively.php' => config_path('investigatively.php'),
     ]);
 
+    $this->publishes([
+        __DIR__.'/Assets' => public_path('vendor/investigatively'),
+    ], 'public');
 
     /**
      * Register the routes file
