@@ -19,6 +19,7 @@ class ArticleServiceProvider extends ServiceProvider{
      */
     $this->publishes([
         __DIR__.'/Views' => base_path('resources/views/vendor/investigatively'),
+        __DIR__.'/Controllers' => base_path('app/Http/Controllers/Investigatively'),
         __DIR__.'/Config/investigatively.php' => config_path('investigatively.php'),
     ]);
 
@@ -35,11 +36,6 @@ class ArticleServiceProvider extends ServiceProvider{
    * Register method for the package.
    */
   public function register(){
-    /**
-     * Merge config with what the user has provided.
-     */
-    $this->mergeConfigFrom(
-        __DIR__.'/Config/investigatively.php', 'investigatively'
-    );
+    
   }
 }

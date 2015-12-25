@@ -3,6 +3,9 @@
     "description": "A publishing utility for laravel 5",
     "type": "utility",
     "license": "MIT",
+    "require": {
+        "codesleeve/laravel-stapler": "1.0.*"
+    },
     "autoload": {
         "psr-4": {
             "Investigatively\\Article\\": "src/"
@@ -17,6 +20,5 @@
             "email": "nandwabee@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {}
+    "minimum-stability": "stable"
 }
