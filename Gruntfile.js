@@ -14,14 +14,22 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'src/Assets/screen.css': 'src/Assets/sass/screen.scss',
+                    'src/Assets/css/screen.css': 'src/Assets/sass/screen.scss',
                 }
             }
         },
         concat: {
             editor: {
                 src: [
-                    'src/Assets/javascripts/vendor/core/*.js'
+                    'src/Assets/js/vendor/core/*.js',
+                    'src/Assets/js/vendor/ng-modules/*.js',
+                    'src/Assets/js/vendor/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
+                    'src/Assets/js/vendor/blueimp-file-upload/js/jquery.iframe-transport.js',
+                    'src/Assets/js/vendor/blueimp-file-upload/js/jquery.fileupload.js',
+                    'src/Assets/js/vendor/medium-editor.min.js',
+                    'src/Assets/js/vendor/medium-editor-insert-plugin.min.js',
+                    'src/Assets/js/app/app.js',
+                    'src/Assets/js/app/controllers/*.js'
                 ],
                 dest: 'src/Assets/js/editor.js',
             }
