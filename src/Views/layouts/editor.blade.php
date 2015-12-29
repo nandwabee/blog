@@ -8,32 +8,24 @@
   <!-- Latest compiled and minified CSS -->
   <link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/vendor/investigatively/css/screen.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <meta name="article_id" content="@yield('article_id')">
 
   <div class="navbar-fixed">
     <nav class="in-navbar">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Brand</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">        
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Photos</a></li>
-            <li><a href="#">Tags</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+      <ul class="right hide-on-med-and-down">
+          <li><a href="#!">Photos</a></li>
+          <li><a href="#!">Tags</a></li>
+      </ul>
+      <ul id="slide-out" class="side-nav">
+        <li><a href="#!">Photos</a></li>
+        <li><a href="#!">Tags</a></li>
+      </ul>
+      <a data-activates="slide-out" class="button-collapse" ng-click="activateSideMenu()">
+        <i class="medium material-icons">menu</i>
+      </a>
     </nav>
   </div>
   
@@ -42,6 +34,7 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script type="text/javascript" src="/vendor/investigatively/js/editor.js"></script>
 </body>
 </html>

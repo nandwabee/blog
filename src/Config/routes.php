@@ -24,6 +24,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Investigatively'], function()
     'uses' => 'PhotoController@upload'
   ]);
 
+  Route::post('photo/{id}/update',[
+    'uses' => 'PhotoController@update'
+  ]);
+
   Route::get('article/{id}/review',[
     'uses' => 'ArticleAdminController@home'
   ]);

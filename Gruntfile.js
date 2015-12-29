@@ -25,7 +25,6 @@ module.exports = function(grunt) {
                     'src/Assets/js/vendor/ng-modules/*.js',
                     'node_modules/marked/lib/marked.js',
                     'node_modules/angular-marked/dist/angular-marked.js',
-                    'node_modules/materialize-css/bin/materialize.js',
                     'src/Assets/js/app/app.js',
                     'src/Assets/js/app/controllers/*.js'
                 ],

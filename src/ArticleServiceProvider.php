@@ -26,7 +26,8 @@ class ArticleServiceProvider extends ServiceProvider{
     $this->publishes([
         __DIR__.'/Assets/js/editor.js' => public_path('vendor/investigatively/js/editor.js'),
         __DIR__.'/Assets/css/screen.css' => public_path('vendor/investigatively/css/screen.css'),
-        __DIR__.'/Assets/templates' => public_path('vendor/investigatively/templates')
+        __DIR__.'/Assets/templates' => public_path('vendor/investigatively/templates'),
+        __DIR__.'/Assets/font' => public_path('vendor/investigatively/font')
     ], 'public');
 
     /**
