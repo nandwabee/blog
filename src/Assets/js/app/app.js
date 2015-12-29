@@ -1,5 +1,6 @@
 var editor = angular.module('investigativeditor', [
-    'ui.router'
+    'ui.router',
+    'hc.marked'
 ]);
 
 editor.config(function ($stateProvider, $urlRouterProvider) {
@@ -20,8 +21,10 @@ editor.run(function ($state, $http, $rootScope) {
 
 });
 
-// $(function () {
-//     $('.editable').mediumInsert({
-//         editor: editor
-//     });
-// });
+$(function () {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+});

@@ -8,13 +8,4 @@ editor.controller('EditorController', function ($scope, $http, $state, $statePar
      if (article_id) {
         console.log(article_id)
      }
-
-     /**
-      * Initialise the medium editor
-      */
-    var wysiwyg = new MediumEditor('.editable');
-
-    $('.editable').mediumInsert({
-        wysiwyg: editor
-    });
 });

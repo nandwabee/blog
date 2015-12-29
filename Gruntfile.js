@@ -23,11 +23,9 @@ module.exports = function(grunt) {
                 src: [
                     'src/Assets/js/vendor/core/*.js',
                     'src/Assets/js/vendor/ng-modules/*.js',
-                    'src/Assets/js/vendor/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
-                    'src/Assets/js/vendor/blueimp-file-upload/js/jquery.iframe-transport.js',
-                    'src/Assets/js/vendor/blueimp-file-upload/js/jquery.fileupload.js',
-                    'src/Assets/js/vendor/medium-editor.min.js',
-                    'src/Assets/js/vendor/medium-editor-insert-plugin.min.js',
+                    'node_modules/marked/lib/marked.js',
+                    'node_modules/angular-marked/dist/angular-marked.js',
+                    'node_modules/materialize-css/bin/materialize.js',
                     'src/Assets/js/app/app.js',
                     'src/Assets/js/app/controllers/*.js'
                 ],

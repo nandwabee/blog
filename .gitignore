@@ -2,4 +2,3 @@ vendor
 .idea
 node_modules
 .sass-cache
-.phpintel

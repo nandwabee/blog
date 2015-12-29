@@ -21,7 +21,7 @@ class ArticleServiceProvider extends ServiceProvider{
         __DIR__.'/Views' => base_path('resources/views/vendor/investigatively'),
         __DIR__.'/Controllers' => base_path('app/Http/Controllers/Investigatively'),
         __DIR__.'/Config/investigatively.php' => config_path('investigatively.php'),
-    ]);
+    ],'config');
 
     $this->publishes([
         __DIR__.'/Assets/js/editor.js' => public_path('vendor/investigatively/js/editor.js'),
