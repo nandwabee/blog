@@ -1,7 +1,8 @@
 @extends('investigatively::layouts.editor')
 
 @section('content')
-  <div class="container in-content-wrapper" ng-controller="EditorController">
+  <meta name="article_id" content="">
+  <div class="container in-content-wrapper">
     <div class="row">
       <div class="col l6 in-editor-left">
         <div class="row in-editor-title-row">

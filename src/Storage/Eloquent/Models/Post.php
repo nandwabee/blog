@@ -6,4 +6,6 @@ use Jenssegers\Mongodb\Model;
 
 class Post extends Model{
   protected $collection = 'articles';
+
+  protected $guarded = ['id','_id'];
 }

@@ -10,14 +10,13 @@
   <link rel="stylesheet" type="text/css" href="/vendor/investigatively/css/screen.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body ng-controller="EditorController">
   <meta name="article_id" content="@yield('article_id')">
 
   <div class="navbar-fixed">
     <nav class="in-navbar">
       <ul class="right hide-on-med-and-down">
-          <li><a href="#!">Photos</a></li>
-          <li><a href="#!">Tags</a></li>
+          <li><a ng-click="saveDraft()" class="btn">Save</a></li>
       </ul>
       <ul id="slide-out" class="side-nav">
         <li><a href="#!">Photos</a></li>
@@ -32,9 +31,6 @@
 
   @yield('content')
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   <script type="text/javascript" src="/vendor/investigatively/js/editor.js"></script>
 </body>
 </html>

@@ -5,6 +5,8 @@ editor.controller('EditorController', function ($scope, $http, $state, $statePar
      */
      var article_id = $("meta[name=article_id]").attr("content");
 
+     $scope.article = {};
+
      if (article_id) {
         console.log(article_id)
      }
@@ -36,12 +38,13 @@ editor.controller('EditorController', function ($scope, $http, $state, $statePar
           var editorDropzone = this;
 
           this.on("success", function(file, response) {
+            console.log(response)
             editorDropzone.removeAllFiles(true);
 
             $scope.$apply(function(){
               var photos = $scope.article_photos;
 
-              photos.push(response);
+              photos.push(response.id);
 
               console.log($scope.article_photos);
             });
@@ -61,5 +64,24 @@ editor.controller('EditorController', function ($scope, $http, $state, $statePar
       $http.post("/photo/" +id+ "/update", data).success(function(data, status) {
             
       })
+    }
+
+    $scope.saveDraft = function(){
+      var article = $scope.article;
+
+      var data = {
+        title: article.title,
+        body: article.body,
+        photos: $scope.article_photos
+      }
+
+
+      console.log(data)
+
+      
+      $http.post("/articles/new", data).success(function(data, status) {
+        console.log(data);
+      })
+      
     }
 });
