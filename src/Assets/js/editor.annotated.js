@@ -16186,6 +16186,8 @@ editor.controller('EditorController', ['$scope', '$http', '$state', '$stateParam
       
       $http.post("/articles/new", data).success(function(data, status) {
         console.log(data);
+
+        location.assign('/post/' + data.data._id);
       })
       
     }

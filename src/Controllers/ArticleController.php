@@ -15,6 +15,15 @@ class ArticleController extends Controller{
     return view('investigatively::crud.stepone');
   }
 
+  public function show($id){
+    $data = [
+      'article' => $this->repo->find($id)
+    ];
+
+    return view('investigatively::crud.show')
+      ->with($data);
+  }
+
   public function edit(){
     return view('investigatively::crud.steptwo');
   }

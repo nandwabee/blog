@@ -81,6 +81,8 @@ editor.controller('EditorController', function ($scope, $http, $state, $statePar
       
       $http.post("/articles/new", data).success(function(data, status) {
         console.log(data);
+
+        location.assign('/post/' + data.data._id);
       })
       
     }

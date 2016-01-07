@@ -31,4 +31,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Investigatively'], function()
   Route::get('article/{id}/review',[
     'uses' => 'ArticleAdminController@home'
   ]);
+
+  Route::get('post/{id}',[
+        'uses' => 'ArticleController@show'
+    ]);
 });

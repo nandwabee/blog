@@ -25,6 +25,7 @@
               <ul class="tabs">
                 <li class="tab col s3"><a class="active"href="#preview">Preview</a></li>
                 <li class="tab col s3"><a href="#photos">Photos</a></li>
+                <li class="tab col s3"><a href="#metadata">Metadata</a></li>
               </ul>
             </div>
 
@@ -72,6 +73,10 @@
                   Search Photos
                 </div>
               </div>
+            </div>
+
+            <div id="metadata" class="col s12">
+              Metadata
             </div>
           </div>
       </div>
