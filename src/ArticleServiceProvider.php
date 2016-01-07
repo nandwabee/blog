@@ -15,14 +15,20 @@ class ArticleServiceProvider extends ServiceProvider{
     $this->loadViewsFrom(__DIR__.'/Views', 'investigatively');
 
     /**
-     * Publish the package assets
+     * Publish the package assets.
      */
     $this->publishes([
         __DIR__.'/Views' => base_path('resources/views/vendor/investigatively'),
         __DIR__.'/Controllers' => base_path('app/Http/Controllers/Investigatively'),
         __DIR__.'/Config/investigatively.php' => config_path('investigatively.php'),
-    ]);
+    ],'config');
 
+    $this->publishes([
+        __DIR__.'/Assets/js/editor.js' => public_path('vendor/investigatively/js/editor.js'),
+        __DIR__.'/Assets/css/screen.css' => public_path('vendor/investigatively/css/screen.css'),
+        __DIR__.'/Assets/templates' => public_path('vendor/investigatively/templates'),
+        __DIR__.'/Assets/font' => public_path('vendor/investigatively/font')
+    ], 'public');
 
     /**
      * Register the routes file

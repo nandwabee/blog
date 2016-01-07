@@ -2,6 +2,8 @@
 
 namespace Investigatively\Article\Storage\Eloquent\Repository;
 
+use Investigatively\Article\Storage\Eloquent\Models\Post;
+
 trait FindArticle{
   /**
     * Find a single article using its id
@@ -9,7 +11,7 @@ trait FindArticle{
     * @param $id string The unique string identifying the article.
     */
   public function find($id){
-    $article = Article::find($id);
+    $article = Post::find($id);
 
     return $article;
   }
