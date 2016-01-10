@@ -3,7 +3,9 @@ var editor = angular.module('investigativeditor', [
     'hc.marked'
 ]);
 
-editor.config(function ($stateProvider, $urlRouterProvider) {
+editor.config(function ($stateProvider, $urlRouterProvider,$httpProvider) {
+    $httpProvider.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+
     //Initialise routes
     $stateProvider
         .state('editor', {
