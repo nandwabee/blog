@@ -12,7 +12,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Investigatively'], function()
     'uses' => 'ArticleController@store'
   ]);
 
-  Route::post('article/{id}/review',[
+  Route::post('post/{id}',[
     'uses' => 'ArticleController@update'
   ]);
 
@@ -34,5 +34,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Investigatively'], function()
 
   Route::get('post/{id}',[
         'uses' => 'ArticleController@show'
-    ]);
+  ]);
+
+  Route::get('post/{id}/edit',[
+        'uses' => 'ArticleController@edit'
+  ]);
+
+  Route::get('post/{id}/publish',[
+        'uses' => 'ArticleController@publish'
+  ]);
 });

@@ -16082,7 +16082,9 @@ var editor = angular.module('investigativeditor', [
     'hc.marked'
 ]);
 
-editor.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+editor.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider,$httpProvider) {
+    $httpProvider.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+
     //Initialise routes
     $stateProvider
         .state('editor', {
@@ -16108,12 +16110,16 @@ editor.controller('EditorController', ['$scope', '$http', '$state', '$stateParam
      * The article_id is used to switch the main interface based on the availability value
      *
      */
-     var article_id = $("meta[name=article_id]").attr("content");
+     $scope.article_id = $("meta[name=article_id]").attr("content");
 
      $scope.article = {};
 
-     if (article_id) {
-        console.log(article_id)
+     if ($scope.article_id) {
+        $http.get("/post/" +$scope.article_id).success(function(data, status) {
+            $scope.article = data.article;
+
+            $scope.article_photos = data.article.photos;
+        })
      }
 
      $scope.article_photos = [];
@@ -16149,9 +16155,10 @@ editor.controller('EditorController', ['$scope', '$http', '$state', '$stateParam
             $scope.$apply(function(){
               var photos = $scope.article_photos;
 
-              photos.push(response.id);
+              photos.push(response);
 
               console.log($scope.article_photos);
+              
             });
 
           });
@@ -16177,16 +16184,27 @@ editor.controller('EditorController', ['$scope', '$http', '$state', '$stateParam
       var data = {
         title: article.title,
         body: article.body,
-        photos: $scope.article_photos
+        photos: $scope.article_photos,
+        tags: article.tags
       }
-
-
-      console.log(data)
-
       
       $http.post("/articles/new", data).success(function(data, status) {
-        console.log(data);
+        location.assign('/post/' + data.data._id);
+      })
+      
+    }
 
+    $scope.updateArticle = function(){
+      var article = $scope.article;
+
+      var data = {
+        title: article.title,
+        body: article.body,
+        photos: $scope.article_photos,
+        tags: article.tags
+      }
+      
+      $http.post("/post/"+$scope.article_id, data).success(function(data, status) {
         location.assign('/post/' + data.data._id);
       })
       

@@ -15,8 +15,10 @@
 
   <div class="navbar-fixed">
     <nav class="in-navbar">
+      <a href="/" class="brand-logo"><img src="/logo.png" style="max-height:60px;"></a>
       <ul class="right hide-on-med-and-down">
-          <li><a ng-click="saveDraft()" class="btn">Save</a></li>
+          <li ng-show="article_id"><a ng-click="updateArticle()" class="btn">Update</a></li>
+          <li ng-hide="article_id"><a ng-click="saveDraft()" class="btn">Save</a></li>
       </ul>
       <ul id="slide-out" class="side-nav">
         <li><a href="#!">Photos</a></li>
