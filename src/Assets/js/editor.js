@@ -16209,4 +16209,11 @@ editor.controller('EditorController', function ($scope, $http, $state, $statePar
       })
       
     }
+
+    $scope.setDefaultPhoto = function(photo){
+        $scope.default_photo = {
+            url: photo.url,
+            id: photo.id
+        }
+    }
 });

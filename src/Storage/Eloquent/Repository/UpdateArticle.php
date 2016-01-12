@@ -13,6 +13,7 @@ trait UpdateArticle{
       $post->title = $request->input('title');
       $post->body = $request->input('body');
       $post->photos = $request->input('photos');
+      $post->default_photo = $request->input('default_photo');
       $post->tags = (is_array($request->input('tags'))) ? $request->input('tags') : explode(',', $request->input('tags'));
       $post->save();
     }
