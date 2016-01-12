@@ -8,4 +8,8 @@ class Post extends Model{
   protected $collection = 'articles';
 
   protected $guarded = ['id','_id'];
+
+  public function getTagAttribute($value){
+    return implode(',', $value);
+  }
 }

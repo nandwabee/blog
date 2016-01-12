@@ -3,6 +3,7 @@
 namespace Investigatively\Article\Storage\Eloquent\Repository;
 
 use Investigatively\Article\Storage\Eloquent\Models\Post;
+use Illuminate\Http\Request;
 
 trait UpdateArticle{
   public function update(Request $request,$id){
@@ -10,6 +11,10 @@ trait UpdateArticle{
 
     if($post){
       $post->title = $request->input('title');
+      $post->body = $request->input('body');
+      $post->photos = $request->input('photos');
+      $post->default_photo = $request->input('default_photo');
+      $post->tags = (is_array($request->input('tags'))) ? $request->input('tags') : explode(',', $request->input('tags'));
       $post->save();
     }
 

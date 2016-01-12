@@ -76,7 +76,32 @@
             </div>
 
             <div id="metadata" class="col s12">
-              Metadata
+              <div class="row">
+                <div class="col l12">
+                  <h5 class="metadata-section-name">Category</h5>
+                  <ul class="col l4">
+                    <li>Business</li>
+                    <li>Sports</li>
+                    <li>Election2017</li>
+                  </ul>
+                  <ul class="col l4">
+                    <li>Journalism</li>
+                    <li>Politics</li>
+                  </ul>
+                  <ul class="col l4">
+                    <li>Crime</li>
+                    <li>Courts</li>
+                  </ul>
+                </div>
+
+                <div class="col l12">
+                  <h5 class="metadata-section-name">Tags</h5>
+                  <div class="input-field col s12">
+                      <input id="tags" type="text" class="validate" ng-model="article.tags">
+                      <label for="tags">A comma separated list of tags</label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
       </div>

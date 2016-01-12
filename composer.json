@@ -4,7 +4,8 @@
     "type": "utility",
     "license": "MIT",
     "require": {
-        "codesleeve/laravel-stapler": "1.0.*"
+        "codesleeve/laravel-stapler": "1.0.*",
+        "erusev/parsedown": "1.6.0"
     },
     "require-dev": {
         "atoum/atoum": "~2.1"
